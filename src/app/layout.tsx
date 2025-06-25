@@ -24,10 +24,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Pangolin"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="w-screen bg-black min-[737px]:h-screen min-[737px]:flex min-[737px]:items-center">
+          <div className="max-w-[414px] h-full max-h-[630px] mx-auto w-full bg-white">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
