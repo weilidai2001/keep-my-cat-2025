@@ -3,7 +3,6 @@
 import { Carousel } from "react-responsive-carousel";
 import { useState } from "react";
 import Button from "@/components/ui/button";
-import Image from "next/image";
 // carousel styles
 import "react-responsive-carousel/lib/styles/carousel.css";
 import styles from "./page.module.css";
@@ -47,7 +46,7 @@ export default function Intro() {
       <main className="mt-[100px]">
         <Carousel {...config}>
           {images.map((image, i) => (
-            <img src={currentImageIndex === i ? image : undefined} /> // ensure the gif animation only starts playing on scroll into view
+            <img key={i} src={currentImageIndex === i ? image : undefined} /> // ensure the gif animation only starts playing on scroll into view
           ))}
         </Carousel>
       </main>
