@@ -3,9 +3,10 @@
 import { Carousel } from "react-responsive-carousel";
 import { useState } from "react";
 import Button from "@/components/ui/button";
-
+import Image from "next/image";
 // carousel styles
 import "react-responsive-carousel/lib/styles/carousel.css";
+import styles from "./page.module.css";
 
 const images = [
   "/intro_1.gif",
@@ -42,7 +43,7 @@ export default function Intro() {
   };
 
   return (
-    <div>
+    <div className={styles.page}>
       <main className="mt-[100px]">
         <Carousel {...config}>
           {images.map((image, i) => (
