@@ -3,7 +3,7 @@ import { states } from "@/data/states";
 import Image from "next/image";
 import { ControlsContainer } from "@/components/controls-container";
 import Button from "@/components/ui/button";
-import { JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
+import { JackInTheBox, Slide, Zoom, Flip } from "react-awesome-reveal";
 
 const SlideComponent = ({ stateId }: { stateId: string }) => {
   const state = states[stateId];
@@ -36,6 +36,15 @@ const SlideComponent = ({ stateId }: { stateId: string }) => {
               height={500}
             />
           </Slide>
+        ) : state.animation === "flip" ? (
+          <Flip key={state.heroImageUrl} triggerOnce>
+            <Image
+              src={state.heroImageUrl}
+              alt="hero image"
+              width={500}
+              height={500}
+            />
+          </Flip>
         ) : state.animation === "zoomIn" ? (
           <Zoom key={state.heroImageUrl} triggerOnce>
             <Image

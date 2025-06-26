@@ -5,7 +5,7 @@ export interface StateChoice {
 
 export interface MissionState {
   heroImageUrl: string;
-  animation: "jackInTheBox" | "zoomIn" | "slide";
+  animation: "jackInTheBox" | "zoomIn" | "slide" | "flip";
   script?: string;
   destination?: string;
   retro?: string;
@@ -20,6 +20,98 @@ export interface MissionState {
 export type StatesMap = Record<string, MissionState>;
 
 export const states: StatesMap = {
+  intro1: {
+    heroImageUrl: "/intro_1.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro2",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro2: {
+    heroImageUrl: "/intro_2.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro3",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro3: {
+    heroImageUrl: "/intro_3.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro4",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro4: {
+    heroImageUrl: "/intro_4.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro5",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro5: {
+    heroImageUrl: "/intro_5.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro6",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro6: {
+    heroImageUrl: "/intro_6.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro7",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro7: {
+    heroImageUrl: "/intro_7.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/missions/intro8",
+      text: "Continue",
+    },
+    choice2: {
+      destination: "/dashboard/0/1",
+      text: "Skip intro",
+    },
+  },
+  intro8: {
+    heroImageUrl: "/intro_8.gif",
+    animation: "slide",
+    choice1: {
+      destination: "/dashboard/0/1",
+      text: "Start game",
+    },
+  },
   won: {
     heroImageUrl: "/win.gif",
     animation: "zoomIn",
