@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
-
-// Dynamically import Odometer with SSR disabled
-const Odometer = dynamic(() => import("react-odometerjs"), { ssr: false });
+import AnimatedNumbers from "react-animated-numbers";
 
 // Mocked functions for now
 const getBalance = () => {
@@ -139,20 +136,17 @@ const Dashboard = ({
         <img className="h-full" src={"/dashboard_arm.jpg"} />
         <div
           className={`
-            absolute text-[18px] tracking-[3px] top-[34%] left-[46%] w-[75px] h-[50px] flex justify-center items-center bg-white
-            min-[350px]:left-[47%] min-[401px]:left-[41%]
+            absolute text-[16px] tracking-[3px] top-[34%] left-[46%] w-[75px] h-[50px] flex justify-center items-center bg-white
+            min-[350px]:left-[175px] 
           `}
           style={{ opacity: showBalance ? 1 : 0 }}
           onClick={() => setShowBalance((prev) => !prev)}
         >
           <span>
             £
-            {
-              <Odometer
-                value={balance}
-                options={{ format: "(,ddd)", duration: 1000 }}
-              />
-            }
+            <span>
+              <AnimatedNumbers animateToNumber={balance} />
+            </span>
           </span>
         </div>
       </div>
