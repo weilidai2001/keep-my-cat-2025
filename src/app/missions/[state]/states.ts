@@ -24,13 +24,19 @@ export const states: StatesMap = {
     heroImageUrl: "/win.gif",
     animation: "zoomIn",
     script: "You win!",
-    destination: "/",
+    choice1: {
+      destination: "/",
+      text: "Continue",
+    },
   },
   lost: {
     heroImageUrl: "/lose.gif",
     animation: "zoomIn",
     script: "You lose!",
-    destination: "/",
+    choice1: {
+      destination: "/",
+      text: "Continue",
+    },
   },
   mission_b0m1: {
     heroImageUrl: "/mission_b0m1.jpg",
@@ -53,7 +59,10 @@ export const states: StatesMap = {
       "In 2037, STEM subjects will become even more important than they are now. People are much more likely to find jobs if they have skills in those areas.",
     script:
       "You have gone back to your old job. You have 2 missions left to win the game. <br/>+£3,500",
-    destination: "/dashboards/4/2",
+    choice1: {
+      destination: "/dashboard/4/2",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 3500,
   },
@@ -63,7 +72,10 @@ export const states: StatesMap = {
     retro:
       "STEM subjects will continue to be highly employable in 2037. But it doesn't mean other jobs will completely disappear.",
     script: "No worries, you still have 5 more missions to go. <br/>+£0",
-    destination: "/dashboards/1/2",
+    choice1: {
+      destination: "/dashboard/1/2",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
   },
@@ -88,7 +100,10 @@ export const states: StatesMap = {
     retro:
       "Digital nomads, people who enjoy a nomadic lifestyle working remotely from anywhere in the world, will become much more common in 2037. It is a great way to reduce living costs while getting the same salary.",
     script: "You have saved money by living somewhere cheaper. <br/>+£1,500",
-    destination: "won",
+    choice1: {
+      destination: "won",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 1500,
   },
@@ -99,7 +114,10 @@ export const states: StatesMap = {
       "In the future, a lot people may travel to cheaper countries to live while still working for the same employer remotely. But for those who choose to stay, it is still possible to enjoy life.",
     script:
       "Loving the British weather too much? That’s ok. There are other things to try…<br/>+£0",
-    destination: "/dashboards/4/3",
+    choice1: {
+      destination: "/dashboard/4/3",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
   },
@@ -123,7 +141,10 @@ export const states: StatesMap = {
     retro:
       "In 2037, contributing to the community is very encouraged. The government may start to pay salary for such work especially if other kinds of jobs have been taken by the machine.",
     script: "The local council appreciates your kind work. <br/>+£2,000",
-    destination: "won",
+    choice1: {
+      destination: "won",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
   },
@@ -132,7 +153,10 @@ export const states: StatesMap = {
     animation: "jackInTheBox",
     retro: "If you don't contribute, you aren't rewarded…",
     script: "One step closer to becoming the smartest guy…<br/>+£0",
-    destination: "lost",
+    choice1: {
+      destination: "lost",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
     isFinalMission: true,
@@ -156,7 +180,10 @@ export const states: StatesMap = {
     retro:
       "Digital nomads, people who enjoy a nomadic lifestyle working remotely from anywhere in the world, will become much more common in 2037. It is a great way to reduce living costs while getting the same salary.",
     script: "You have saved money by living in somewhere cheaper. <br/>+£1,500",
-    destination: "/dashboards/2/3",
+    choice1: {
+      destination: "/dashboard/2/3",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 1500,
   },
@@ -167,7 +194,10 @@ export const states: StatesMap = {
       "In the future, a lot people may travel to cheaper countries to live while still working for the same employer remotely. But for those who choose to stay, it is still possible to enjoy life.",
     script:
       "Loving the British weather too much? That’s ok. There are other things to try…<br/>+£0",
-    destination: "/dashboards/3/3",
+    choice1: {
+      destination: "/dashboard/3/3",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
   },
@@ -190,7 +220,10 @@ export const states: StatesMap = {
     retro:
       "Accountancy is one of the professions very likely to be taken by AI in the 2037.",
     script: "He prefers AI.<br/>+£0",
-    destination: "/dashboards/2/4",
+    choice1: {
+      destination: "/dashboard/2/4",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
   },
@@ -200,7 +233,10 @@ export const states: StatesMap = {
     retro:
       "The entertaining industry will still need human workers in the future.",
     script: "He likes it.<br/>+£2,000",
-    destination: "/dashboards/2/4",
+    choice1: {
+      destination: "/dashboard/2/4",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
   },
@@ -223,7 +259,10 @@ export const states: StatesMap = {
     retro:
       "After 20 years, you may no longer see human staff in fast food restaurants. But places like the maid café will still hire waitresses because the dining experience is as important as the food served. ",
     script: "That was embarrassing but worth it!<br/>+£2,000",
-    destination: "/dashboards/2/5",
+    choice1: {
+      destination: "/dashboard/2/5",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
   },
@@ -233,7 +272,10 @@ export const states: StatesMap = {
     retro:
       "Artificial intelligence is capable of taking over the managing task in certain working environment. ",
     script: "Sorry, the place is managed perfectly by algorithms!<br/>+£0",
-    destination: "/dashboards/2/5",
+    choice1: {
+      destination: "/dashboard/2/5",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
   },
@@ -257,7 +299,10 @@ export const states: StatesMap = {
     retro:
       "In 2037, contributing to the community is very encouraged. The government may start to pay salary for such work especially if other kinds of jobs have been taken by the machine.",
     script: "The local council appreciates your kind work<br/>+£2,000",
-    destination: "/dashboards/2/6",
+    choice1: {
+      destination: "/dashboard/2/6",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
   },
@@ -266,7 +311,10 @@ export const states: StatesMap = {
     animation: "jackInTheBox",
     retro: "If you don't contribute, you aren't rewarded…",
     script: "One step closer to becoming the smartest guy…<br/>+£0",
-    destination: "/dashboards/2/6",
+    choice1: {
+      destination: "/dashboard/2/6",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
     minimumBalance: 2999,
@@ -275,13 +323,19 @@ export const states: StatesMap = {
     heroImageUrl: "/mission_b2m6.1.png",
     animation: "slide",
     script: "A kid is looking for an adult to bring him back to the UK.",
-    destination: "mission_b2m6q2",
+    choice1: {
+      destination: "mission_b2m6q2",
+      text: "Continue",
+    },
   },
   mission_b2m6q2: {
     heroImageUrl: "/mission_b2m6.2.png",
     animation: "slide",
     script: "",
-    destination: "mission_b2m6q3",
+    choice1: {
+      destination: "mission_b2m6q3",
+      text: "Continue",
+    },
   },
   mission_b2m6q3: {
     heroImageUrl: "/mission_b2m6.3.png",
@@ -302,7 +356,10 @@ export const states: StatesMap = {
     retro:
       "This boy is a second generation British expatriate, a child of digital nomads. Perhaps children like him would be quite common after 20 years.",
     script: "Everyone is happy now",
-    destination: "won",
+    choice1: {
+      destination: "won",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
     isFinalMission: true,
@@ -311,7 +368,10 @@ export const states: StatesMap = {
     heroImageUrl: "/mission_b2m6a2.png",
     animation: "slide",
     script: "",
-    destination: "mission_b2m6q3",
+    choice1: {
+      destination: "mission_b2m6q3",
+      text: "Continue",
+    },
   },
   mission_b3m3: {
     heroImageUrl: "/mission_b3m3.png",
@@ -331,7 +391,10 @@ export const states: StatesMap = {
     animation: "jackInTheBox",
     retro: "Co-living will become very common, especially in big cities.",
     script: "Here is your rent money. <br/>+£1,500",
-    destination: "/dashboards/3/4",
+    choice1: {
+      destination: "/dashboard/3/4",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 1500,
   },
@@ -340,7 +403,10 @@ export const states: StatesMap = {
     animation: "jackInTheBox",
     retro: "Co-living will become very common, especially in big cities.",
     script: "Hmm…<br/>+£0",
-    destination: "/dashboards/3/4",
+    choice1: {
+      destination: "/dashboard/3/4",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
   },
@@ -362,7 +428,10 @@ export const states: StatesMap = {
     animation: "jackInTheBox",
     retro: "Less labour will be involved in agriculture as machine advances",
     script: "The sheep prefers a machine than you…<br/>+£0",
-    destination: "/dashboards/3/5",
+    choice1: {
+      destination: "/dashboard/3/5",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
     minimumBalance: 999,
@@ -373,7 +442,10 @@ export const states: StatesMap = {
     retro:
       "Since less work is needed, farmers will engage in other activities during the day.",
     script: "The farmer enjoys your company.<br/>+£2,000",
-    destination: "/dashboards/3/5",
+    choice1: {
+      destination: "/dashboard/3/5",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
   },
@@ -395,7 +467,10 @@ export const states: StatesMap = {
     animation: "jackInTheBox",
     retro: "You have picked the wrong target man…",
     script: "You have picked the wrong target man!<br/>+£0",
-    destination: "/dashboards/3/6",
+    choice1: {
+      destination: "/dashboard/3/6",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 0,
     minimumBalance: 2999,
@@ -406,7 +481,10 @@ export const states: StatesMap = {
     retro: "Who says robots won’t develop their own religion?",
     script:
       "You covered its shift so that it can pray to its god. <br/>+£2,000",
-    destination: "/dashboards/3/6",
+    choice1: {
+      destination: "/dashboard/3/6",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
   },
@@ -414,27 +492,42 @@ export const states: StatesMap = {
     heroImageUrl: "/mission_b3m6.1.png",
     animation: "slide",
     script: "",
-    destination: "mission_b3m6q2",
+    choice1: {
+      destination: "mission_b3m6q2",
+      text: "Continue",
+    },
   },
   mission_b3m6q2: {
     heroImageUrl: "/mission_b3m6.2.png",
     animation: "slide",
-    destination: "mission_b3m6q3",
+    choice1: {
+      destination: "mission_b3m6q3",
+      text: "Continue",
+    },
   },
   mission_b3m6q3: {
     heroImageUrl: "/mission_b3m6.3.png",
     animation: "slide",
-    destination: "mission_b3m6q4",
+    choice1: {
+      destination: "mission_b3m6q4",
+      text: "Continue",
+    },
   },
   mission_b3m6q4: {
     heroImageUrl: "/mission_b3m6.4.png",
     animation: "slide",
-    destination: "mission_b3m6q5",
+    choice1: {
+      destination: "mission_b3m6q5",
+      text: "Continue",
+    },
   },
   mission_b3m6q5: {
     heroImageUrl: "/mission_b3m6.5.png",
     animation: "slide",
-    destination: "mission_b3m6q6",
+    choice1: {
+      destination: "mission_b3m6q6",
+      text: "Continue",
+    },
   },
   mission_b3m6q6: {
     heroImageUrl: "/mission_b3m6.6.png",
@@ -455,7 +548,10 @@ export const states: StatesMap = {
     retro:
       "The VR technology could help those whose physical ability is compromised to engage in activities that are impossible for them in real life.",
     script: "Good choice!<br/>+£2,000",
-    destination: "won",
+    choice1: {
+      destination: "won",
+      text: "Continue",
+    },
     isAnswer: true,
     reward: 2000,
     isFinalMission: true,
@@ -464,7 +560,10 @@ export const states: StatesMap = {
     heroImageUrl: "/mission_b3m6a2.png",
     animation: "jackInTheBox",
     script: "",
-    destination: "mission_b3m6q6",
+    choice1: {
+      destination: "mission_b3m6q6",
+      text: "Continue",
+    },
     reward: 0,
   },
 };

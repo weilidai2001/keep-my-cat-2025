@@ -9,8 +9,13 @@ const Mission = ({ stateId }: { stateId: string }) => {
   const state = states[stateId];
   return (
     <div>
-      <div className="pt-[10px] mx-auto w-[310px] h-full text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">
-        {state.script && <h1>{state.script}</h1>}
+      <div className="py-[10px] mx-auto w-[310px] h-full text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">
+        {state.script && (
+          <h1
+            className="text-center"
+            dangerouslySetInnerHTML={{ __html: state.script }}
+          />
+        )}
       </div>
       <Image
         src={state.heroImageUrl}

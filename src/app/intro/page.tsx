@@ -52,8 +52,12 @@ export default function Intro() {
         </Carousel>
       </main>
       <ControlsContainer>
-        {showSkipIntroButton && <Button href="/" text="Skip intro" />}
-        {showStartGameButton && <Button href="/" text="Start game" />}
+        {showSkipIntroButton && (
+          <Button href="/dashboard/0/1" text="Skip intro" />
+        )}
+        {showStartGameButton && (
+          <Button href="/dashboard/0/1" text="Start game" />
+        )}
       </ControlsContainer>
     </div>
   );
