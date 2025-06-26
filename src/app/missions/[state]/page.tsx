@@ -4,12 +4,13 @@ import { states } from "./states";
 import Image from "next/image";
 import { ControlsContainer } from "@/components/controls-container";
 import Button from "@/components/ui/button";
+import { JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
 
 const Mission = ({ stateId }: { stateId: string }) => {
   const state = states[stateId];
   return (
     <div>
-      <div className="py-[10px] mx-auto w-[310px] h-full text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">
+      <div className="py-[10px] mx-auto w-[310px] h-[100px] text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">
         {state.script && (
           <h1
             className="text-center"
@@ -17,12 +18,43 @@ const Mission = ({ stateId }: { stateId: string }) => {
           />
         )}
       </div>
-      <Image
-        src={state.heroImageUrl}
-        alt="hero image"
-        width={500}
-        height={500}
-      />
+      <>
+        {state.animation === "jackInTheBox" ? (
+          <JackInTheBox key={state.heroImageUrl}>
+            <Image
+              src={state.heroImageUrl}
+              alt="hero image"
+              width={500}
+              height={500}
+            />
+          </JackInTheBox>
+        ) : state.animation === "slide" ? (
+          <Slide key={state.heroImageUrl} triggerOnce>
+            <Image
+              src={state.heroImageUrl}
+              alt="hero image"
+              width={500}
+              height={500}
+            />
+          </Slide>
+        ) : state.animation === "zoomIn" ? (
+          <Zoom key={state.heroImageUrl} triggerOnce>
+            <Image
+              src={state.heroImageUrl}
+              alt="hero image"
+              width={500}
+              height={500}
+            />
+          </Zoom>
+        ) : (
+          <Image
+            src={state.heroImageUrl}
+            alt="hero image"
+            width={500}
+            height={500}
+          />
+        )}
+      </>
       <ControlsContainer>
         {state.choice1 && (
           <Button href={state.choice1.destination} text={state.choice1.text} />

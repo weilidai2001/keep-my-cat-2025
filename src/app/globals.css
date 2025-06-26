@@ -24,6 +24,45 @@
   animation: flare 2s infinite;
 }
 
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+.jackInTheBox-enter {
+  opacity: 0;
+  transform: scale(0.1) rotate(30deg);
+  transform-origin: center bottom;
+}
+.jackInTheBox-enter-active {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  animation: jackInTheBox 700ms both;
+  transition: opacity 700ms, transform 700ms;
+}
+.jackInTheBox-exit {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+.jackInTheBox-exit-active {
+  opacity: 0;
+  transform: scale(0.1) rotate(-30deg);
+  transition: opacity 300ms, transform 300ms;
+}
+
 @keyframes pulse {
   0% {
     opacity: 0.8;
