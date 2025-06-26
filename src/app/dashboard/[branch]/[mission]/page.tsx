@@ -63,15 +63,13 @@ const renderQuestionMark = () => (
   <img src={"/dashboard_mission_question_mark.png"} />
 );
 
-// Props type
-interface DashboardProps {
-  branchNumber: number;
-  missionNumber: number;
-}
-
-const Dashboard: React.FC<DashboardProps> = ({
+// Dashboard now just takes branchNumber and missionNumber as props
+const Dashboard = ({
   branchNumber,
   missionNumber,
+}: {
+  branchNumber: number;
+  missionNumber: number;
 }) => {
   const [balance, setBalance] = useState<number>(getPreviouslyShownBalance());
   const [showBalance, setShowBalance] = useState<boolean>(false);
@@ -162,4 +160,16 @@ const Dashboard: React.FC<DashboardProps> = ({
   );
 };
 
-export default Dashboard;
+// Next.js page component that receives params from the route
+export default function Page({
+  params,
+}: {
+  params: Promise<{ branch: string; mission: string }>;
+}) {
+  const { branch, mission } = React.use(params);
+  const branchNumber = Number(branch);
+  const missionNumber = Number(mission);
+  return (
+    <Dashboard branchNumber={branchNumber} missionNumber={missionNumber} />
+  );
+}
