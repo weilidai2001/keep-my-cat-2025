@@ -1,4 +1,5 @@
 import Button from "@/components/ui/button";
+import { ControlsContainer } from "@/components/controls-container";
 
 export default function Home() {
   return (
@@ -6,9 +7,9 @@ export default function Home() {
       <main className="relative w-full pb-[100%] overflow-visible mt-[100px]">
         <img className="absolute w-full" src="/index.gif" />
       </main>
-      <footer className="flex justify-center mt-[20px]">
+      <ControlsContainer>
         <Button href="/intro" text="START" />
-      </footer>
+      </ControlsContainer>
     </div>
   );
 }

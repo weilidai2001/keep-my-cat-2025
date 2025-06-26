@@ -3,6 +3,7 @@
 import { Carousel } from "react-responsive-carousel";
 import { useState } from "react";
 import Button from "@/components/ui/button";
+import { ControlsContainer } from "@/components/controls-container";
 // carousel styles
 import "react-responsive-carousel/lib/styles/carousel.css";
 import styles from "./page.module.css";
@@ -50,10 +51,10 @@ export default function Intro() {
           ))}
         </Carousel>
       </main>
-      <footer className="flex justify-center">
+      <ControlsContainer>
         {showSkipIntroButton && <Button href="/" text="Skip intro" />}
         {showStartGameButton && <Button href="/" text="Start game" />}
-      </footer>
+      </ControlsContainer>
     </div>
   );
 }
