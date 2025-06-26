@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import AnimatedNumbers from "react-animated-numbers";
+import Image from "next/image";
 
 // Mocked functions for now
 const getBalance = () => {
@@ -37,27 +38,55 @@ const renderMission = (
   if (thisMission === latestMission && thisBranch === latestBranch) {
     return (
       <a href={`/missions/mission_b${latestBranch}m${latestMission}`}>
-        <img
-          className="rounded-full animate-flare" // NOTE: Add 'flare' keyframes to tailwind.config.js
+        <Image
+          className="rounded-full animate-flare"
           src={"/dashboard_mission_active.png"}
+          alt="mission active"
+          width={30}
+          height={30}
         />
       </a>
     );
   } else if (
     isMissionAccomplished(thisBranch, thisMission, latestBranch, latestMission)
   ) {
-    return <img src={"/dashboard_mission_completed.png"} />;
+    return (
+      <Image
+        src={"/dashboard_mission_completed.png"}
+        alt="mission completed"
+        width={30}
+        height={30}
+      />
+    );
   } else {
-    return <img src={"/dashboard_mission_incomplete.png"} />;
+    return (
+      <Image
+        src={"/dashboard_mission_incomplete.png"}
+        alt="mission incomplete"
+        width={30}
+        height={30}
+      />
+    );
   }
 };
 
 const renderPath = () => (
-  <img className="w-[5px] h-[5px]" src={"/dashboard_mission_path.png"} />
+  <Image
+    className="w-[5px] h-[5px]"
+    src={"/dashboard_mission_path.png"}
+    alt="mission path"
+    width={5}
+    height={5}
+  />
 );
 
 const renderQuestionMark = () => (
-  <img src={"/dashboard_mission_question_mark.png"} />
+  <Image
+    src={"/dashboard_mission_question_mark.png"}
+    alt="mission question mark"
+    width={30}
+    height={30}
+  />
 );
 
 const Dashboard = ({
