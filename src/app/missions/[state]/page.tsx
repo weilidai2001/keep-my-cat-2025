@@ -1,19 +1,12 @@
 "use client";
 import React from "react";
-import { states, convertBranchMissionToFrameId } from "./states";
+import { states } from "./states";
 import Image from "next/image";
 import { ControlsContainer } from "@/components/controls-container";
 import Button from "@/components/ui/button";
 
-const Mission = ({
-  branchNumber,
-  missionNumber,
-}: {
-  branchNumber: number;
-  missionNumber: number;
-}) => {
-  const state =
-    states[convertBranchMissionToFrameId(branchNumber, missionNumber)];
+const Mission = ({ stateId }: { stateId: string }) => {
+  const state = states[stateId];
   return (
     <div>
       <div className="pt-[10px] mx-auto w-[310px] h-full text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">
@@ -40,10 +33,8 @@ const Mission = ({
 export default function Page({
   params,
 }: {
-  params: Promise<{ branch: string; mission: string }>;
+  params: Promise<{ state: string }>;
 }) {
-  const { branch, mission } = React.use(params);
-  const branchNumber = Number(branch);
-  const missionNumber = Number(mission);
-  return <Mission branchNumber={branchNumber} missionNumber={missionNumber} />;
+  const { state } = React.use(params);
+  return <Mission stateId={state} />;
 }

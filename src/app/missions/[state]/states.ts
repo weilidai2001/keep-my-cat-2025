@@ -468,8 +468,3 @@ export const states: StatesMap = {
     reward: 0,
   },
 };
-
-export const convertBranchMissionToFrameId = (
-  branchNumber: number,
-  missionNumber: number
-) => `mission_b${branchNumber}m${missionNumber}`;

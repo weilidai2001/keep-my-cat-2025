@@ -36,7 +36,7 @@ const renderMission = (
 ) => {
   if (thisMission === latestMission && thisBranch === latestBranch) {
     return (
-      <a href={`/missions/${latestBranch}/${latestMission}`}>
+      <a href={`/missions/mission_b${latestBranch}m${latestMission}`}>
         <img
           className="rounded-full animate-flare" // NOTE: Add 'flare' keyframes to tailwind.config.js
           src={"/dashboard_mission_active.png"}
@@ -60,7 +60,6 @@ const renderQuestionMark = () => (
   <img src={"/dashboard_mission_question_mark.png"} />
 );
 
-// Dashboard now just takes branchNumber and missionNumber as props
 const Dashboard = ({
   branchNumber,
   missionNumber,
