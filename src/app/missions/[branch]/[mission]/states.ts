@@ -6,7 +6,7 @@ export interface StateChoice {
 export interface MissionState {
   heroImageUrl: string;
   animation: string;
-  script: string;
+  script?: string;
   destination?: string;
   retro?: string;
   isAnswer?: boolean;

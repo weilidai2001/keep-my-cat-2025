@@ -17,7 +17,7 @@ const Mission = ({
   return (
     <div>
       <div className="pt-[10px] mx-auto w-[310px] h-full text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">
-        <h1>{state.script}</h1>
+        {state.script && <h1>{state.script}</h1>}
       </div>
       <Image
         src={state.heroImageUrl}
@@ -26,8 +26,12 @@ const Mission = ({
         height={500}
       />
       <ControlsContainer>
-        <Button href="/missions/0/2" text="Play with the farmer" />
-        <Button href="/missions/0/1" text="Play with the farmer" />
+        {state.choice1 && (
+          <Button href={state.choice1.destination} text={state.choice1.text} />
+        )}
+        {state.choice2 && (
+          <Button href={state.choice2.destination} text={state.choice2.text} />
+        )}
       </ControlsContainer>
     </div>
   );
