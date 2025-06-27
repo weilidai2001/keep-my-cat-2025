@@ -42,7 +42,7 @@ export default function Page({
   const [balance, setBalance] = useSessionBalance();
   const router = useRouter();
 
-  const choice1ButtonClick = () => {
+  const handleChoiceButtonClick = (choiceKey: "choice1" | "choice2") => {
     // Add reward to balance
     const { reward } = states[stateId];
     if (reward) {
@@ -59,31 +59,7 @@ export default function Page({
       states[stateId].isFinalMission,
       states[stateId].minimumBalance,
       balance,
-      states[stateId].choice1
-    );
-    if (nextDestination) {
-      router.push(nextDestination);
-    }
-  };
-
-  const choice2ButtonClick = () => {
-    // Add reward to balance
-    const { reward } = states[stateId];
-    if (reward) {
-      const currentBalance = balance;
-      if (!currentBalance) {
-        setBalance(reward);
-      } else {
-        const newBalance = currentBalance + reward;
-        setBalance(newBalance);
-      }
-    }
-
-    const nextDestination = getNextDestination(
-      states[stateId].isFinalMission,
-      states[stateId].minimumBalance,
-      balance,
-      states[stateId].choice2
+      states[stateId][choiceKey]
     );
     if (nextDestination) {
       router.push(nextDestination);
@@ -93,8 +69,8 @@ export default function Page({
   return (
     <SlideComponent
       stateId={stateId}
-      choice1ButtonClick={choice1ButtonClick}
-      choice2ButtonClick={choice2ButtonClick}
+      choice1ButtonClick={() => handleChoiceButtonClick("choice1")}
+      choice2ButtonClick={() => handleChoiceButtonClick("choice2")}
     />
   );
 }
