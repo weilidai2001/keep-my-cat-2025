@@ -1,8 +1,0 @@
-.page {
-  :global(.control-arrow) {
-    background-color: grey !important;
-  }
-  :global(.slider-wrapper) {
-    width: calc(100% - 56px) !important;
-  }
-}

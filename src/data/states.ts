@@ -25,7 +25,7 @@ export const states = {
     heroImageUrl: "/intro_1.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro2",
+      destination: "intro2",
       text: "Continue",
     },
     choice2: {
@@ -38,7 +38,7 @@ export const states = {
     heroImageUrl: "/intro_2.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro3",
+      destination: "intro3",
       text: "Continue",
     },
     choice2: {
@@ -51,7 +51,7 @@ export const states = {
     heroImageUrl: "/intro_3.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro4",
+      destination: "intro4",
       text: "Continue",
     },
     choice2: {
@@ -64,7 +64,7 @@ export const states = {
     heroImageUrl: "/intro_4.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro5",
+      destination: "intro5",
       text: "Continue",
     },
     choice2: {
@@ -77,7 +77,7 @@ export const states = {
     heroImageUrl: "/intro_5.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro6",
+      destination: "intro6",
       text: "Continue",
     },
     choice2: {
@@ -90,7 +90,7 @@ export const states = {
     heroImageUrl: "/intro_6.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro7",
+      destination: "intro7",
       text: "Continue",
     },
     choice2: {
@@ -103,7 +103,7 @@ export const states = {
     heroImageUrl: "/intro_7.gif",
     animation: "slide",
     choice1: {
-      destination: "/missions/intro8",
+      destination: "intro8",
       text: "Continue",
     },
     choice2: {
