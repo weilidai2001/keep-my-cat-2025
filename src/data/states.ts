@@ -636,3 +636,30 @@ export const states: StatesMap = {
     reward: 0,
   },
 };
+
+export function getNextDestination(
+  isFinalMission: MissionState["isFinalMission"],
+  minimumBalance: MissionState["minimumBalance"],
+  balance: number | null,
+  choice?: StateChoice
+): string | undefined {
+  const wonDestination = "/missions/won";
+  const lostDestination = "/missions/lost";
+
+  let nextStateId;
+  if (isFinalMission) {
+    if (balance && balance >= 5000) {
+      nextStateId = wonDestination;
+    } else {
+      nextStateId = lostDestination;
+    }
+  } else if (balance && balance <= (minimumBalance ?? -1)) {
+    nextStateId = lostDestination;
+  } else if (balance && balance >= 5000) {
+    nextStateId = wonDestination;
+  } else if (choice) {
+    nextStateId = choice.destination;
+  }
+
+  return nextStateId;
+}
