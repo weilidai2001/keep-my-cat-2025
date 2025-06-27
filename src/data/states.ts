@@ -706,7 +706,11 @@ export function getNextDestination(
   } else if (balance && balance >= 5000) {
     nextDestination = wonDestination;
   } else if (choice) {
-    nextDestination = choice.destination;
+    if (choice.displayOnDashboard) {
+      nextDestination = `/dashboard/${choice.destination}`;
+    } else {
+      nextDestination = `/missions/${choice.destination}`;
+    }
   }
 
   return nextDestination;
