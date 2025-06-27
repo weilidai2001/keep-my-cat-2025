@@ -165,7 +165,7 @@ const Dashboard = ({
         <div
           className={`
             absolute text-[16px] tracking-[3px] top-[34%] left-[46%] w-[75px] h-[50px] flex justify-center items-center bg-white
-            min-[350px]:left-[175px] 
+            min-[350px]:left-[175px] cursor-pointer
           `}
           style={{ opacity: showBalance ? 1 : 0 }}
           onClick={() => setShowBalance((prev) => !prev)}
