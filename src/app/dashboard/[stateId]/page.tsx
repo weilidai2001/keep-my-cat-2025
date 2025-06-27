@@ -4,22 +4,11 @@ import AnimatedNumbers from "react-animated-numbers";
 import Image from "next/image";
 import { getBalance } from "@/api/balance-persistence";
 import { getState, tileIsMission, StateKey } from "@/data/states";
+import { getPreviousStates } from "@/data/states";
 
-// Helper functions
-const isMissionAccomplished = (
-  thisBranch: number,
-  thisMission: number,
-  latestBranch: number,
-  latestMission: number
-) => {
-  if (thisBranch === 0 && latestBranch > 0) {
-    return true;
-  } else if (thisBranch === 1 && (latestBranch === 2 || latestBranch === 3)) {
-    return true;
-  } else if (thisBranch === latestBranch && thisMission < latestMission) {
-    return true;
-  }
-  return false;
+const isMissionAccomplished = (currentTileId: number, stateId: StateKey) => {
+  const completedStates = getPreviousStates("mission_b0m1", stateId, getState);
+  return completedStates.some(({ tileId }) => tileId === currentTileId);
 };
 
 const renderMission = (tileId: number, stateId: StateKey) => {
@@ -36,21 +25,15 @@ const renderMission = (tileId: number, stateId: StateKey) => {
         />
       </a>
     );
-  }
-  // else if (
-  //   isMissionAccomplished(thisBranch, thisMission, latestBranch, latestMission)
-  // ) {
-  //   return (
-  //     <Image
-  //       src={"/dashboard_mission_completed.png"}
-  //       alt="mission completed"
-  //       width={30}
-  //       height={30}
-  //     />
-  //   );
-  // }
-  else if (tileIsMission(tileId)) {
-    return (
+  } else if (tileIsMission(tileId)) {
+    return isMissionAccomplished(tileId, stateId) ? (
+      <Image
+        src={"/dashboard_mission_completed.png"}
+        alt="mission completed"
+        width={30}
+        height={30}
+      />
+    ) : (
       <Image
         src={"/dashboard_mission_incomplete.png"}
         alt="mission incomplete"

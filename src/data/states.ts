@@ -674,6 +674,55 @@ export const tileIsMission = (tileId: number): boolean => {
   );
 };
 
+export const getPreviousStates = (
+  startingStateId: StateKey,
+  endingStateId: StateKey,
+  getStateFn: (stateId: StateKey) => MissionState = getState
+): MissionState[] => {
+  const path: MissionState[] = [];
+  const visited = new Set<StateKey>();
+
+  const findPath = (stateId: StateKey): boolean => {
+    if (visited.has(stateId)) {
+      return false;
+    }
+
+    visited.add(stateId);
+
+    const currentState = getStateFn(stateId);
+    if (!currentState) {
+      return false;
+    }
+
+    if (stateId === endingStateId) {
+      path.push(currentState);
+      return true;
+    }
+
+    if (currentState.choice1) {
+      const choice1Destination = currentState.choice1.destination as StateKey;
+      if (findPath(choice1Destination)) {
+        path.push(currentState);
+        return true;
+      }
+    }
+
+    if (currentState.choice2) {
+      const choice2Destination = currentState.choice2.destination as StateKey;
+      if (findPath(choice2Destination)) {
+        path.push(currentState);
+        return true;
+      }
+    }
+
+    return false;
+  };
+
+  findPath(startingStateId);
+
+  return path.reverse();
+};
+
 export function getNextDestination(
   isFinalMission: MissionState["isFinalMission"],
   minimumBalance: MissionState["minimumBalance"],
