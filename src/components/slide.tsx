@@ -1,5 +1,5 @@
 import React from "react";
-import { states } from "@/data/states";
+import { getState, StateKey } from "@/data/states";
 import Image from "next/image";
 import { ControlsContainer } from "@/components/controls-container";
 import Button from "@/components/ui/button";
@@ -10,11 +10,11 @@ const SlideComponent = ({
   choice1ButtonClick,
   choice2ButtonClick,
 }: {
-  stateId: string;
+  stateId: StateKey;
   choice1ButtonClick?: () => void;
   choice2ButtonClick?: () => void;
 }) => {
-  const state = states[stateId];
+  const state = getState(stateId);
   return (
     <div>
       <div className="py-[10px] mx-auto w-[310px] h-[100px] text-[18px] leading-[1.3] z-[2] flex items-center justify-center text-center">

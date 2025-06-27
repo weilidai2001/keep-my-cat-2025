@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import SlideComponent from "@/components/slide";
-import { getNextDestination, states } from "@/data/states";
+import { getNextDestination, getState, StateKey } from "@/data/states";
 import { useRouter } from "next/navigation";
 import { getBalance, incrementBalance } from "@/api/balance-persistence";
 
@@ -14,7 +14,7 @@ export default function Page({
   const router = useRouter();
 
   const handleChoiceButtonClick = (choiceKey: "choice1" | "choice2") => {
-    const state = states[stateId];
+    const state = getState(stateId as StateKey);
 
     if (state.reward) {
       incrementBalance(state.reward);
@@ -24,6 +24,7 @@ export default function Page({
       state.isFinalMission,
       state.minimumBalance,
       getBalance(),
+      stateId,
       state[choiceKey]
     );
 

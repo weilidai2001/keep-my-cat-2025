@@ -16,9 +16,9 @@ export interface MissionState {
   choice2?: StateChoice;
 }
 
-export type StatesMap = Record<string, MissionState>;
+export type States = Record<StateKey, MissionState>;
 
-export const states: StatesMap = {
+export const states = {
   intro1: {
     heroImageUrl: "/intro_1.gif",
     animation: "slide",
@@ -635,9 +635,11 @@ export const states: StatesMap = {
     },
     reward: 0,
   },
-};
+} as const satisfies Record<string, MissionState>;
 
-type StateKey = keyof typeof states;
+export type StateKey = keyof typeof states;
+
+export const getState = (stateId: StateKey): MissionState => states[stateId];
 
 export function getNextDestination(
   isFinalMission: MissionState["isFinalMission"],
