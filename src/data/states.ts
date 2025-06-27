@@ -16,6 +16,7 @@ export interface MissionState {
   choice1?: StateChoice;
   choice2?: StateChoice;
   tileId?: number;
+  displayOnDashboard?: boolean;
 }
 
 export type States = Record<StateKey, MissionState>;
@@ -679,6 +680,10 @@ export const states = {
 export type StateKey = keyof typeof states;
 
 export const getState = (stateId: StateKey): MissionState => states[stateId];
+
+export const tileIsMission = (tileId: number): boolean => {
+  return Object.values(states).some((state) => state.tileId === tileId);
+};
 
 export function getNextDestination(
   isFinalMission: MissionState["isFinalMission"],

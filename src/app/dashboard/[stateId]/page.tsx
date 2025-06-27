@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import AnimatedNumbers from "react-animated-numbers";
 import Image from "next/image";
 import { getBalance } from "@/api/balance-persistence";
-import { getState, StateKey } from "@/data/states";
+import { getState, tileIsMission, StateKey } from "@/data/states";
 
 // Helper functions
 const isMissionAccomplished = (
@@ -49,7 +49,7 @@ const renderMission = (tileId: number, stateId: StateKey) => {
   //     />
   //   );
   // }
-  else {
+  else if (tileIsMission(tileId)) {
     return (
       <Image
         src={"/dashboard_mission_incomplete.png"}
