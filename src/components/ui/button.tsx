@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -13,9 +13,9 @@ const Button: React.FC<ButtonProps> = ({ href, text, onClick }) => {
   const router = useRouter();
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClick) onClick(e);
-    // Only navigate if not prevented
-    if (!e.defaultPrevented) {
+    if (onClick) {
+      onClick(e);
+    } else {
       router.push(href);
     }
   };

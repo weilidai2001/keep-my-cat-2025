@@ -116,7 +116,7 @@ export const states: StatesMap = {
     animation: "zoomIn",
     script: "You win!",
     choice1: {
-      destination: "/",
+      destination: "/retro",
       text: "Continue",
     },
   },
@@ -125,7 +125,7 @@ export const states: StatesMap = {
     animation: "zoomIn",
     script: "You lose!",
     choice1: {
-      destination: "/",
+      destination: "/retro",
       text: "Continue",
     },
   },
