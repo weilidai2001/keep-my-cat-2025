@@ -31,7 +31,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -44,7 +43,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -57,7 +55,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -70,7 +67,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -83,7 +79,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -96,7 +91,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -109,7 +103,6 @@ export const states = {
     },
     choice2: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -118,7 +111,6 @@ export const states = {
     animation: "slide",
     choice1: {
       destination: "mission_b0m1",
-      displayOnDashboard: true,
       text: "Start game",
     },
   },
@@ -141,6 +133,7 @@ export const states = {
     },
   },
   mission_b0m1: {
+    displayOnDashboard: true,
     tileId: 34,
     heroImageUrl: "/mission_b0m1.jpg",
     animation: "jackInTheBox",
@@ -164,7 +157,6 @@ export const states = {
       "You have gone back to your old job. You have 2 missions left to win the game. <br/>+£3,500",
     choice1: {
       destination: "mission_b4m2",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 3500,
@@ -177,12 +169,12 @@ export const states = {
     script: "No worries, you still have 5 more missions to go. <br/>+£0",
     choice1: {
       destination: "mission_b1m2",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
   },
   mission_b4m2: {
+    displayOnDashboard: true,
     tileId: 31,
     heroImageUrl: "/mission_b4m2.jpg",
     animation: "jackInTheBox",
@@ -219,12 +211,12 @@ export const states = {
       "Loving the British weather too much? That’s ok. There are other things to try…<br/>+£0",
     choice1: {
       destination: "mission_b4m3",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
   },
   mission_b4m3: {
+    displayOnDashboard: true,
     tileId: 61,
     heroImageUrl: "/mission_b4m3.jpg",
     animation: "jackInTheBox",
@@ -264,6 +256,7 @@ export const states = {
     isFinalMission: true,
   },
   mission_b1m2: {
+    displayOnDashboard: true,
     tileId: 64,
     heroImageUrl: "/mission_b1m2.jpg",
     animation: "jackInTheBox",
@@ -285,7 +278,6 @@ export const states = {
     script: "You have saved money by living in somewhere cheaper. <br/>+£1,500",
     choice1: {
       destination: "mission_b2m3",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 1500,
@@ -299,12 +291,12 @@ export const states = {
       "Loving the British weather too much? That’s ok. There are other things to try…<br/>+£0",
     choice1: {
       destination: "mission_b3m3",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
   },
   mission_b2m3: {
+    displayOnDashboard: true,
     tileId: 94,
     heroImageUrl: "/mission_b2m3.jpg",
     animation: "jackInTheBox",
@@ -326,7 +318,6 @@ export const states = {
     script: "He prefers AI.<br/>+£0",
     choice1: {
       destination: "mission_b2m4",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -339,12 +330,12 @@ export const states = {
     script: "He likes it.<br/>+£2,000",
     choice1: {
       destination: "mission_b2m4",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
   },
   mission_b2m4: {
+    displayOnDashboard: true,
     tileId: 97,
     heroImageUrl: "/mission_b2m4.jpg",
     animation: "jackInTheBox",
@@ -366,7 +357,6 @@ export const states = {
     script: "That was embarrassing but worth it!<br/>+£2,000",
     choice1: {
       destination: "mission_b2m5",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
@@ -379,12 +369,12 @@ export const states = {
     script: "Sorry, the place is managed perfectly by algorithms!<br/>+£0",
     choice1: {
       destination: "mission_b2m5",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
   },
   mission_b2m5: {
+    displayOnDashboard: true,
     tileId: 100,
     heroImageUrl: "/mission_b2m5.jpg",
     animation: "jackInTheBox",
@@ -407,7 +397,6 @@ export const states = {
     script: "The local council appreciates your kind work<br/>+£2,000",
     choice1: {
       destination: "mission_b2m6",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
@@ -419,13 +408,13 @@ export const states = {
     script: "One step closer to becoming the smartest guy…<br/>+£0",
     choice1: {
       destination: "mission_b2m6",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
     minimumBalance: 2999,
   },
   mission_b2m6: {
+    displayOnDashboard: true,
     tileId: 70,
     heroImageUrl: "/mission_b2m6.1.png",
     animation: "slide",
@@ -480,6 +469,7 @@ export const states = {
     },
   },
   mission_b3m3: {
+    displayOnDashboard: true,
     tileId: 67,
     heroImageUrl: "/mission_b3m3.png",
     animation: "jackInTheBox",
@@ -500,7 +490,6 @@ export const states = {
     script: "Here is your rent money. <br/>+£1,500",
     choice1: {
       destination: "mission_b3m4",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 1500,
@@ -512,12 +501,12 @@ export const states = {
     script: "Hmm…<br/>+£0",
     choice1: {
       destination: "mission_b3m4",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
   },
   mission_b3m4: {
+    displayOnDashboard: true,
     tileId: 37,
     heroImageUrl: "/mission_b3m4.png",
     animation: "jackInTheBox",
@@ -538,7 +527,6 @@ export const states = {
     script: "The sheep prefers a machine than you…<br/>+£0",
     choice1: {
       destination: "mission_b3m5",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -552,12 +540,12 @@ export const states = {
     script: "The farmer enjoys your company.<br/>+£2,000",
     choice1: {
       destination: "mission_b3m5",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
   },
   mission_b3m5: {
+    displayOnDashboard: true,
     tileId: 7,
     heroImageUrl: "/mission_b3m5.png",
     animation: "jackInTheBox",
@@ -578,7 +566,6 @@ export const states = {
     script: "You have picked the wrong target man!<br/>+£0",
     choice1: {
       destination: "mission_b3m6",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -592,12 +579,12 @@ export const states = {
       "You covered its shift so that it can pray to its god. <br/>+£2,000",
     choice1: {
       destination: "mission_b3m6",
-      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
   },
   mission_b3m6: {
+    displayOnDashboard: true,
     tileId: 4,
     heroImageUrl: "/mission_b3m6.1.png",
     animation: "slide",
@@ -682,7 +669,9 @@ export type StateKey = keyof typeof states;
 export const getState = (stateId: StateKey): MissionState => states[stateId];
 
 export const tileIsMission = (tileId: number): boolean => {
-  return Object.values(states).some((state) => state.tileId === tileId);
+  return Object.values(states).some(
+    (state: MissionState) => state.tileId === tileId
+  );
 };
 
 export function getNextDestination(
@@ -711,7 +700,7 @@ export function getNextDestination(
   } else if (balance && balance >= 5000) {
     nextDestination = wonDestination;
   } else if (choice) {
-    if (choice.displayOnDashboard) {
+    if (getState(choice.destination as StateKey).displayOnDashboard) {
       nextDestination = `/dashboard/${choice.destination}`;
     } else {
       nextDestination = `/missions/${choice.destination}`;
