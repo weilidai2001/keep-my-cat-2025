@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import AnimatedNumbers from "react-animated-numbers";
 import Image from "next/image";
 import { getBalance } from "@/api/balance-persistence";
+import { getState, StateKey } from "@/data/states";
 
 // Helper functions
 const isMissionAccomplished = (
@@ -21,15 +22,11 @@ const isMissionAccomplished = (
   return false;
 };
 
-const renderMission = (
-  thisBranch: number,
-  thisMission: number,
-  latestBranch: number,
-  latestMission: number
-) => {
-  if (thisMission === latestMission && thisBranch === latestBranch) {
+const renderMission = (tileId: number, stateId: StateKey) => {
+  const state = getState(stateId);
+  if (tileId === state.tileId) {
     return (
-      <a href={`/missions/mission_b${latestBranch}m${latestMission}`}>
+      <a href={`/missions/${stateId}`}>
         <Image
           className="rounded-full animate-flare"
           src={"/dashboard_mission_active.png"}
@@ -39,18 +36,20 @@ const renderMission = (
         />
       </a>
     );
-  } else if (
-    isMissionAccomplished(thisBranch, thisMission, latestBranch, latestMission)
-  ) {
-    return (
-      <Image
-        src={"/dashboard_mission_completed.png"}
-        alt="mission completed"
-        width={30}
-        height={30}
-      />
-    );
-  } else {
+  }
+  // else if (
+  //   isMissionAccomplished(thisBranch, thisMission, latestBranch, latestMission)
+  // ) {
+  //   return (
+  //     <Image
+  //       src={"/dashboard_mission_completed.png"}
+  //       alt="mission completed"
+  //       width={30}
+  //       height={30}
+  //     />
+  //   );
+  // }
+  else {
     return (
       <Image
         src={"/dashboard_mission_incomplete.png"}
@@ -81,13 +80,7 @@ const renderQuestionMark = () => (
   />
 );
 
-const Dashboard = ({
-  branchNumber,
-  missionNumber,
-}: {
-  branchNumber: number;
-  missionNumber: number;
-}) => {
+const Dashboard = ({ stateId }: { stateId: StateKey }) => {
   const [showBalance, setShowBalance] = useState<boolean>(false);
 
   useEffect(() => {
@@ -112,30 +105,8 @@ const Dashboard = ({
             ].includes(tileNum)
           ) {
             content = renderPath();
-          } else if (tileNum === 4) {
-            content = renderMission(3, 6, branchNumber, missionNumber);
-          } else if (tileNum === 7) {
-            content = renderMission(3, 5, branchNumber, missionNumber);
-          } else if (tileNum === 31) {
-            content = renderMission(4, 2, branchNumber, missionNumber);
-          } else if (tileNum === 34) {
-            content = renderMission(0, 1, branchNumber, missionNumber);
-          } else if (tileNum === 37) {
-            content = renderMission(3, 4, branchNumber, missionNumber);
-          } else if (tileNum === 61) {
-            content = renderMission(4, 3, branchNumber, missionNumber);
-          } else if (tileNum === 64) {
-            content = renderMission(1, 2, branchNumber, missionNumber);
-          } else if (tileNum === 67) {
-            content = renderMission(3, 3, branchNumber, missionNumber);
-          } else if (tileNum === 70) {
-            content = renderMission(2, 6, branchNumber, missionNumber);
-          } else if (tileNum === 94) {
-            content = renderMission(2, 3, branchNumber, missionNumber);
-          } else if (tileNum === 97) {
-            content = renderMission(2, 4, branchNumber, missionNumber);
-          } else if (tileNum === 100) {
-            content = renderMission(2, 5, branchNumber, missionNumber);
+          } else {
+            content = renderMission(tileNum, stateId);
           }
           return (
             <div
@@ -174,12 +145,8 @@ const Dashboard = ({
 export default function Page({
   params,
 }: {
-  params: Promise<{ branch: string; mission: string }>;
+  params: Promise<{ stateId: string }>;
 }) {
-  const { branch, mission } = React.use(params);
-  const branchNumber = Number(branch);
-  const missionNumber = Number(mission);
-  return (
-    <Dashboard branchNumber={branchNumber} missionNumber={missionNumber} />
-  );
+  const { stateId } = React.use(params);
+  return <Dashboard stateId={stateId as StateKey} />;
 }

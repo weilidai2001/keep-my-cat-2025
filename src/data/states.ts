@@ -15,6 +15,7 @@ export interface MissionState {
   minimumBalance?: number;
   choice1?: StateChoice;
   choice2?: StateChoice;
+  tileId?: number;
 }
 
 export type States = Record<StateKey, MissionState>;
@@ -139,6 +140,7 @@ export const states = {
     },
   },
   mission_b0m1: {
+    tileId: 34,
     heroImageUrl: "/mission_b0m1.jpg",
     animation: "jackInTheBox",
     script:
@@ -180,6 +182,7 @@ export const states = {
     reward: 0,
   },
   mission_b4m2: {
+    tileId: 31,
     heroImageUrl: "/mission_b4m2.jpg",
     animation: "jackInTheBox",
     retro:
@@ -221,6 +224,7 @@ export const states = {
     reward: 0,
   },
   mission_b4m3: {
+    tileId: 61,
     heroImageUrl: "/mission_b4m3.jpg",
     animation: "jackInTheBox",
     script:
@@ -259,6 +263,7 @@ export const states = {
     isFinalMission: true,
   },
   mission_b1m2: {
+    tileId: 64,
     heroImageUrl: "/mission_b1m2.jpg",
     animation: "jackInTheBox",
     script: "Fancy living abroad?",
@@ -299,6 +304,7 @@ export const states = {
     reward: 0,
   },
   mission_b2m3: {
+    tileId: 94,
     heroImageUrl: "/mission_b2m3.jpg",
     animation: "jackInTheBox",
     script: "You met a successful businessman",
@@ -338,6 +344,7 @@ export const states = {
     reward: 2000,
   },
   mission_b2m4: {
+    tileId: 97,
     heroImageUrl: "/mission_b2m4.jpg",
     animation: "jackInTheBox",
     script: "A maid café just opened.",
@@ -377,6 +384,7 @@ export const states = {
     reward: 0,
   },
   mission_b2m5: {
+    tileId: 100,
     heroImageUrl: "/mission_b2m5.jpg",
     animation: "jackInTheBox",
     script:
@@ -417,6 +425,7 @@ export const states = {
     minimumBalance: 2999,
   },
   mission_b2m6: {
+    tileId: 70,
     heroImageUrl: "/mission_b2m6.1.png",
     animation: "slide",
     script: "A kid is looking for an adult to bring him back to the UK.",
@@ -470,6 +479,7 @@ export const states = {
     },
   },
   mission_b3m3: {
+    tileId: 67,
     heroImageUrl: "/mission_b3m3.png",
     animation: "jackInTheBox",
     script: "A traveller wants to live with you for a while.",
@@ -507,6 +517,7 @@ export const states = {
     reward: 0,
   },
   mission_b3m4: {
+    tileId: 37,
     heroImageUrl: "/mission_b3m4.png",
     animation: "jackInTheBox",
     script: "This farmer keeps a lot of sheep.",
@@ -546,6 +557,7 @@ export const states = {
     reward: 2000,
   },
   mission_b3m5: {
+    tileId: 7,
     heroImageUrl: "/mission_b3m5.png",
     animation: "jackInTheBox",
     script: "One of the robots is looking anxious.",
@@ -585,6 +597,7 @@ export const states = {
     reward: 2000,
   },
   mission_b3m6: {
+    tileId: 4,
     heroImageUrl: "/mission_b3m6.1.png",
     animation: "slide",
     script: "",
