@@ -13,3 +13,7 @@ A remake of an original interactive story game [I made 8 years ago](https://gith
 - Jest has been added for unit testing, replacing the previous Karma setup.
 - Components are now highly reusable and more generic to reduce duplication. For example, the `Slide` component is used in both the intro and mission pages, replacing a third-party carousel library that was not intuitive for this project.
 - Prettier has been added to maintain consistent code styling.
+
+This screenshot shows replacing hardcoded list of tiles with a .map() call:
+
+![Screenshot](/screenshot-hardcoded_vs_map.png)
