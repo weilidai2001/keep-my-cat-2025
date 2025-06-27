@@ -1,6 +1,7 @@
 export interface StateChoice {
   destination: string;
   text: string;
+  displayOnDashboard?: boolean;
 }
 
 export interface MissionState {
@@ -27,7 +28,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -39,7 +41,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -51,7 +54,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -63,7 +67,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -75,7 +80,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -87,7 +93,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -99,7 +106,8 @@ export const states = {
       text: "Continue",
     },
     choice2: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Skip intro",
     },
   },
@@ -107,7 +115,8 @@ export const states = {
     heroImageUrl: "/intro_8.gif",
     animation: "slide",
     choice1: {
-      destination: "/dashboard/0/1",
+      destination: "mission_b0m1",
+      displayOnDashboard: true,
       text: "Start game",
     },
   },
@@ -151,7 +160,8 @@ export const states = {
     script:
       "You have gone back to your old job. You have 2 missions left to win the game. <br/>+£3,500",
     choice1: {
-      destination: "/dashboard/4/2",
+      destination: "mission_b4m2",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 3500,
@@ -163,7 +173,8 @@ export const states = {
       "STEM subjects will continue to be highly employable in 2037. But it doesn't mean other jobs will completely disappear.",
     script: "No worries, you still have 5 more missions to go. <br/>+£0",
     choice1: {
-      destination: "/dashboard/1/2",
+      destination: "mission_b1m2",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -203,7 +214,8 @@ export const states = {
     script:
       "Loving the British weather too much? That’s ok. There are other things to try…<br/>+£0",
     choice1: {
-      destination: "/dashboard/4/3",
+      destination: "mission_b4m3",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -266,7 +278,8 @@ export const states = {
       "Digital nomads, people who enjoy a nomadic lifestyle working remotely from anywhere in the world, will become much more common in 2037. It is a great way to reduce living costs while getting the same salary.",
     script: "You have saved money by living in somewhere cheaper. <br/>+£1,500",
     choice1: {
-      destination: "/dashboard/2/3",
+      destination: "mission_b2m3",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 1500,
@@ -279,7 +292,8 @@ export const states = {
     script:
       "Loving the British weather too much? That’s ok. There are other things to try…<br/>+£0",
     choice1: {
-      destination: "/dashboard/3/3",
+      destination: "mission_b3m3",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -304,7 +318,8 @@ export const states = {
       "Accountancy is one of the professions very likely to be taken by AI in the 2037.",
     script: "He prefers AI.<br/>+£0",
     choice1: {
-      destination: "/dashboard/2/4",
+      destination: "mission_b2m4",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -316,7 +331,8 @@ export const states = {
       "The entertaining industry will still need human workers in the future.",
     script: "He likes it.<br/>+£2,000",
     choice1: {
-      destination: "/dashboard/2/4",
+      destination: "mission_b2m4",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
@@ -341,7 +357,8 @@ export const states = {
       "After 20 years, you may no longer see human staff in fast food restaurants. But places like the maid café will still hire waitresses because the dining experience is as important as the food served. ",
     script: "That was embarrassing but worth it!<br/>+£2,000",
     choice1: {
-      destination: "/dashboard/2/5",
+      destination: "mission_b2m5",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
@@ -353,7 +370,8 @@ export const states = {
       "Artificial intelligence is capable of taking over the managing task in certain working environment. ",
     script: "Sorry, the place is managed perfectly by algorithms!<br/>+£0",
     choice1: {
-      destination: "/dashboard/2/5",
+      destination: "mission_b2m5",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -379,7 +397,8 @@ export const states = {
       "In 2037, contributing to the community is very encouraged. The government may start to pay salary for such work especially if other kinds of jobs have been taken by the machine.",
     script: "The local council appreciates your kind work<br/>+£2,000",
     choice1: {
-      destination: "/dashboard/2/6",
+      destination: "mission_b2m6",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
@@ -390,7 +409,8 @@ export const states = {
     retro: "If you don't contribute, you aren't rewarded…",
     script: "One step closer to becoming the smartest guy…<br/>+£0",
     choice1: {
-      destination: "/dashboard/2/6",
+      destination: "mission_b2m6",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -468,7 +488,8 @@ export const states = {
     retro: "Co-living will become very common, especially in big cities.",
     script: "Here is your rent money. <br/>+£1,500",
     choice1: {
-      destination: "/dashboard/3/4",
+      destination: "mission_b3m4",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 1500,
@@ -479,7 +500,8 @@ export const states = {
     retro: "Co-living will become very common, especially in big cities.",
     script: "Hmm…<br/>+£0",
     choice1: {
-      destination: "/dashboard/3/4",
+      destination: "mission_b3m4",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -503,7 +525,8 @@ export const states = {
     retro: "Less labour will be involved in agriculture as machine advances",
     script: "The sheep prefers a machine than you…<br/>+£0",
     choice1: {
-      destination: "/dashboard/3/5",
+      destination: "mission_b3m5",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -516,7 +539,8 @@ export const states = {
       "Since less work is needed, farmers will engage in other activities during the day.",
     script: "The farmer enjoys your company.<br/>+£2,000",
     choice1: {
-      destination: "/dashboard/3/5",
+      destination: "mission_b3m5",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,
@@ -540,7 +564,8 @@ export const states = {
     retro: "You have picked the wrong target man…",
     script: "You have picked the wrong target man!<br/>+£0",
     choice1: {
-      destination: "/dashboard/3/6",
+      destination: "mission_b3m6",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 0,
@@ -553,7 +578,8 @@ export const states = {
     script:
       "You covered its shift so that it can pray to its god. <br/>+£2,000",
     choice1: {
-      destination: "/dashboard/3/6",
+      destination: "mission_b3m6",
+      displayOnDashboard: true,
       text: "Continue",
     },
     reward: 2000,

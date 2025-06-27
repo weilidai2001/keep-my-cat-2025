@@ -14,7 +14,8 @@ export default function Page({
   const router = useRouter();
 
   const handleChoiceButtonClick = (choiceKey: "choice1" | "choice2") => {
-    const state = getState(stateId as StateKey);
+    const typedStateId = stateId as StateKey;
+    const state = getState(typedStateId);
 
     if (state.reward) {
       incrementBalance(state.reward);
@@ -24,12 +25,12 @@ export default function Page({
       state.isFinalMission,
       state.minimumBalance,
       getBalance(),
-      stateId,
+      typedStateId,
       state[choiceKey]
     );
 
     if (nextDestination) {
-      router.push(nextDestination);
+      router.push(nextDestination as StateKey);
     }
   };
 
