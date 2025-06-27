@@ -9,7 +9,6 @@ export interface MissionState {
   script?: string;
   destination?: string;
   retro?: string;
-  isAnswer?: boolean;
   reward?: number;
   isFinalMission?: boolean;
   minimumBalance?: number;
@@ -155,7 +154,6 @@ export const states: StatesMap = {
       destination: "/dashboard/4/2",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 3500,
   },
   mission_b0m1a2: {
@@ -168,7 +166,6 @@ export const states: StatesMap = {
       destination: "/dashboard/1/2",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
   },
   mission_b4m2: {
@@ -196,7 +193,6 @@ export const states: StatesMap = {
       destination: "won",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 1500,
   },
   mission_b4m2a2: {
@@ -210,7 +206,6 @@ export const states: StatesMap = {
       destination: "/dashboard/4/3",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
   },
   mission_b4m3: {
@@ -237,7 +232,6 @@ export const states: StatesMap = {
       destination: "won",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
   },
   mission_b4m3a2: {
@@ -249,7 +243,6 @@ export const states: StatesMap = {
       destination: "lost",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
     isFinalMission: true,
   },
@@ -276,7 +269,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/3",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 1500,
   },
   mission_b1m2a2: {
@@ -290,7 +282,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/3",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
   },
   mission_b2m3: {
@@ -316,7 +307,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/4",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
   },
   mission_b2m3a2: {
@@ -329,7 +319,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/4",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
   },
   mission_b2m4: {
@@ -355,7 +344,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/5",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
   },
   mission_b2m4a2: {
@@ -368,7 +356,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/5",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
   },
   mission_b2m5: {
@@ -395,7 +382,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/6",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
   },
   mission_b2m5a2: {
@@ -407,7 +393,6 @@ export const states: StatesMap = {
       destination: "/dashboard/2/6",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
     minimumBalance: 2999,
   },
@@ -452,7 +437,6 @@ export const states: StatesMap = {
       destination: "won",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
     isFinalMission: true,
   },
@@ -487,7 +471,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/4",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 1500,
   },
   mission_b3m3a2: {
@@ -499,7 +482,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/4",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
   },
   mission_b3m4: {
@@ -524,7 +506,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/5",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
     minimumBalance: 999,
   },
@@ -538,7 +519,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/5",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
   },
   mission_b3m5: {
@@ -563,7 +543,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/6",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 0,
     minimumBalance: 2999,
   },
@@ -577,7 +556,6 @@ export const states: StatesMap = {
       destination: "/dashboard/3/6",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
   },
   mission_b3m6: {
@@ -644,7 +622,6 @@ export const states: StatesMap = {
       destination: "won",
       text: "Continue",
     },
-    isAnswer: true,
     reward: 2000,
     isFinalMission: true,
   },
