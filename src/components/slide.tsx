@@ -7,10 +7,12 @@ import { JackInTheBox, Slide, Zoom, Flip } from "react-awesome-reveal";
 
 const SlideComponent = ({
   stateId,
-  primaryButtonClick,
+  choice1ButtonClick,
+  choice2ButtonClick,
 }: {
   stateId: string;
-  primaryButtonClick?: () => void;
+  choice1ButtonClick?: () => void;
+  choice2ButtonClick?: () => void;
 }) => {
   const state = states[stateId];
   return (
@@ -74,11 +76,15 @@ const SlideComponent = ({
           <Button
             href={state.choice1.destination}
             text={state.choice1.text}
-            onClick={primaryButtonClick}
+            onClick={choice1ButtonClick}
           />
         )}
         {state.choice2 && (
-          <Button href={state.choice2.destination} text={state.choice2.text} />
+          <Button
+            href={state.choice2.destination}
+            text={state.choice2.text}
+            onClick={choice2ButtonClick}
+          />
         )}
       </ControlsContainer>
     </div>

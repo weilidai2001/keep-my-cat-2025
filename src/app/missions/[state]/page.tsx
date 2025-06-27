@@ -6,26 +6,26 @@ import { states } from "@/data/states";
 import type { MissionState, StateChoice } from "@/data/states";
 import { useRouter } from "next/navigation";
 
-function getNextStateId(
+function getNextDestination(
   isFinalMission: MissionState["isFinalMission"],
   minimumBalance: MissionState["minimumBalance"],
   balance: number | null,
   choice?: StateChoice
 ): string | undefined {
-  const wonStateId = "won";
-  const lostStateId = "lost";
+  const wonDestination = "/missions/won";
+  const lostDestination = "/missions/lost";
 
   let nextStateId;
   if (isFinalMission) {
-    if (balance >= 5000) {
-      nextStateId = wonStateId;
+    if (balance && balance >= 5000) {
+      nextStateId = wonDestination;
     } else {
-      nextStateId = lostStateId;
+      nextStateId = lostDestination;
     }
-  } else if (balance <= (minimumBalance ?? -1)) {
-    nextStateId = lostStateId;
-  } else if (balance >= 5000) {
-    nextStateId = wonStateId;
+  } else if (balance && balance <= (minimumBalance ?? -1)) {
+    nextStateId = lostDestination;
+  } else if (balance && balance >= 5000) {
+    nextStateId = wonDestination;
   } else if (choice) {
     nextStateId = choice.destination;
   }
@@ -42,7 +42,7 @@ export default function Page({
   const [balance, setBalance] = useSessionBalance();
   const router = useRouter();
 
-  const primaryButtonClick = () => {
+  const choice1ButtonClick = () => {
     // Add reward to balance
     const { reward } = states[stateId];
     if (reward) {
@@ -55,18 +55,46 @@ export default function Page({
       }
     }
 
-    const nextStateId = getNextStateId(
+    const nextDestination = getNextDestination(
       states[stateId].isFinalMission,
       states[stateId].minimumBalance,
       balance,
       states[stateId].choice1
     );
-    if (nextStateId) {
-      router.push(`/missions/${nextStateId}`);
+    if (nextDestination) {
+      router.push(nextDestination);
+    }
+  };
+
+  const choice2ButtonClick = () => {
+    // Add reward to balance
+    const { reward } = states[stateId];
+    if (reward) {
+      const currentBalance = balance;
+      if (!currentBalance) {
+        setBalance(reward);
+      } else {
+        const newBalance = currentBalance + reward;
+        setBalance(newBalance);
+      }
+    }
+
+    const nextDestination = getNextDestination(
+      states[stateId].isFinalMission,
+      states[stateId].minimumBalance,
+      balance,
+      states[stateId].choice2
+    );
+    if (nextDestination) {
+      router.push(nextDestination);
     }
   };
 
   return (
-    <SlideComponent stateId={stateId} primaryButtonClick={primaryButtonClick} />
+    <SlideComponent
+      stateId={stateId}
+      choice1ButtonClick={choice1ButtonClick}
+      choice2ButtonClick={choice2ButtonClick}
+    />
   );
 }
