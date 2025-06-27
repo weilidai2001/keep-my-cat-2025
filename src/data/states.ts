@@ -637,29 +637,36 @@ export const states: StatesMap = {
   },
 };
 
+type StateKey = keyof typeof states;
+
 export function getNextDestination(
   isFinalMission: MissionState["isFinalMission"],
   minimumBalance: MissionState["minimumBalance"],
   balance: number | null,
+  currentStateId: StateKey,
   choice?: StateChoice
 ): string | undefined {
   const wonDestination = "/missions/won";
   const lostDestination = "/missions/lost";
 
-  let nextStateId;
-  if (isFinalMission) {
-    if (balance && balance >= 5000) {
-      nextStateId = wonDestination;
-    } else {
-      nextStateId = lostDestination;
-    }
-  } else if (balance && balance <= (minimumBalance ?? -1)) {
-    nextStateId = lostDestination;
-  } else if (balance && balance >= 5000) {
-    nextStateId = wonDestination;
-  } else if (choice) {
-    nextStateId = choice.destination;
+  if (currentStateId === "won" || currentStateId === "lost") {
+    return "/retro";
   }
 
-  return nextStateId;
+  let nextDestination;
+  if (isFinalMission) {
+    if (balance && balance >= 5000) {
+      nextDestination = wonDestination;
+    } else {
+      nextDestination = lostDestination;
+    }
+  } else if (balance && balance <= (minimumBalance ?? -1)) {
+    nextDestination = lostDestination;
+  } else if (balance && balance >= 5000) {
+    nextDestination = wonDestination;
+  } else if (choice) {
+    nextDestination = choice.destination;
+  }
+
+  return nextDestination;
 }
