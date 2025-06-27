@@ -5,7 +5,13 @@ import { ControlsContainer } from "@/components/controls-container";
 import Button from "@/components/ui/button";
 import { JackInTheBox, Slide, Zoom, Flip } from "react-awesome-reveal";
 
-const SlideComponent = ({ stateId }: { stateId: string }) => {
+const SlideComponent = ({
+  stateId,
+  primaryButtonClick,
+}: {
+  stateId: string;
+  primaryButtonClick?: () => void;
+}) => {
   const state = states[stateId];
   return (
     <div>
@@ -65,7 +71,11 @@ const SlideComponent = ({ stateId }: { stateId: string }) => {
       </>
       <ControlsContainer>
         {state.choice1 && (
-          <Button href={state.choice1.destination} text={state.choice1.text} />
+          <Button
+            href={state.choice1.destination}
+            text={state.choice1.text}
+            onClick={primaryButtonClick}
+          />
         )}
         {state.choice2 && (
           <Button href={state.choice2.destination} text={state.choice2.text} />

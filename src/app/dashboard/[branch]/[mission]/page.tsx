@@ -2,15 +2,7 @@
 import React, { useState, useEffect } from "react";
 import AnimatedNumbers from "react-animated-numbers";
 import Image from "next/image";
-
-// Mocked functions for now
-const getBalance = () => {
-  return 1000;
-};
-const getPreviouslyShownBalance = () => {
-  return 1000;
-};
-const setPreviouslyShownBalance = (balance: number) => {};
+import { useSessionBalance } from "@/hooks/useSessionBalance";
 
 // Helper functions
 const isMissionAccomplished = (
@@ -96,13 +88,10 @@ const Dashboard = ({
   branchNumber: number;
   missionNumber: number;
 }) => {
-  const [balance, setBalance] = useState<number>(getPreviouslyShownBalance());
+  const [balance, setBalance] = useSessionBalance();
   const [showBalance, setShowBalance] = useState<boolean>(false);
 
   useEffect(() => {
-    const balance = getBalance();
-    setPreviouslyShownBalance(balance);
-    setBalance(balance);
     setShowBalance(true);
   }, []);
 
