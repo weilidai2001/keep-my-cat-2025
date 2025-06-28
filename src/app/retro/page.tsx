@@ -1,6 +1,6 @@
 "use client";
 import Modal from "@/components/ui/modal";
-import { getMissionStatesWithImages, StateKey } from "@/data/states";
+import { getMissionStatesWithImages } from "@/data/states";
 import Button from "@/components/ui/button";
 import { ControlsContainer } from "@/components/controls-container";
 import { getJourney } from "@/api/journey-persistence";
@@ -13,9 +13,9 @@ export default function Retro() {
     ReturnType<typeof getMissionStatesWithImages>
   >([]);
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [selectedStateId, setSelectedStateId] = useState<StateKey | undefined>(
-    undefined
-  );
+  const [selectedState, setSelectedState] = useState<
+    ReturnType<typeof getMissionStatesWithImages>[number] | undefined
+  >(undefined);
 
   useEffect(() => {
     const visitedStates = getJourney();
@@ -25,7 +25,12 @@ export default function Retro() {
   return (
     <main className="pt-[100px]">
       <Modal isOpen={showModal} setIsOpen={setShowModal}>
-        Selected state: {selectedStateId}
+        {selectedState && (
+          <section>
+            <img src={selectedState.heroImageUrl} alt="" />
+            <p className="mt-2">{selectedState.retro}</p>
+          </section>
+        )}
       </Modal>
       <div className="grid grid-cols-5 gap-4">
         {statesWithImages.map((state, idx) => {
@@ -36,8 +41,10 @@ export default function Retro() {
                 state.visited ? "cursor-pointer" : "opacity-20"
               }`}
               onClick={() => {
-                setSelectedStateId(state.stateId);
-                setShowModal(true);
+                if (state.visited) {
+                  setSelectedState(state);
+                  setShowModal(true);
+                }
               }}
             >
               <img

@@ -1,23 +1,17 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import { Permanent_Marker } from "next/font/google";
-
-const markerFont = Permanent_Marker({
-  subsets: ["latin"],
-  weight: "400",
-});
+import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function Modal({
-  isOpen,
-  setIsOpen,
-  children,
-}: {
+import React from "react";
+
+type ModalProps = {
   isOpen: boolean;
-  setIsOpen: Function;
+  setIsOpen: (open: boolean) => void;
   children: React.ReactNode;
-}) {
+};
+
+const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen, children }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -51,7 +45,7 @@ export default function Modal({
               <Dialog.Panel className="w-[80%] max-w-[calc(var(--virtual-screen-max-width)*0.8)] h-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className={`absolute top-4 right-4 text-3xl text-black hover:scale-110 transition ${markerFont.className}`}
+                  className="absolute top-4 right-4 text-3xl text-black hover:scale-110 transition"
                   aria-label="Close modal"
                   type="button"
                 >
@@ -65,4 +59,6 @@ export default function Modal({
       </Dialog>
     </Transition>
   );
-}
+};
+
+export default Modal;
