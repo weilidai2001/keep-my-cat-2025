@@ -51,9 +51,6 @@ export default function Modal({ children }: { children: React.ReactElement }) {
                 >
                   X
                 </button>
-                <Dialog.Title className="text-lg font-medium text-gray-900">
-                  Modal Title
-                </Dialog.Title>
                 <div className="mt-4">{children}</div>
               </Dialog.Panel>
             </Transition.Child>
