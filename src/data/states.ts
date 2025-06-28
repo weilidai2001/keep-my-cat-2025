@@ -5,7 +5,7 @@ export interface StateChoice {
 }
 
 export interface MissionState {
-  heroImageUrl: string;
+  heroImageUrl?: string;
   animation: "jackInTheBox" | "zoomIn" | "slide" | "flip";
   script?: string;
   destination?: string;
@@ -672,6 +672,17 @@ export const tileIsMission = (tileId: number): boolean => {
   return Object.values(states).some(
     (state: MissionState) => state.tileId === tileId
   );
+};
+
+export const getMissionStatesWithImages = (): (MissionState & {
+  heroImageUrl: string;
+})[] => {
+  return Object.entries(states)
+    .filter(
+      ([key, state]: [string, MissionState]) =>
+        key.startsWith("mission_") && !!state.heroImageUrl
+    )
+    .map(([, state]) => state as MissionState & { heroImageUrl: string });
 };
 
 export const getPreviousStates = (
