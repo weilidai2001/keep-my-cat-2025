@@ -1,11 +1,11 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { Permanent_Marker } from 'next/font/google';
+import { Permanent_Marker } from "next/font/google";
 
 const markerFont = Permanent_Marker({
-  subsets: ['latin'],
-  weight: '400',
+  subsets: ["latin"],
+  weight: "400",
 });
 import { Dialog, Transition } from "@headlessui/react";
 
@@ -42,7 +42,7 @@ export default function Modal({ children }: { children: React.ReactElement }) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-[80%] max-w-[450px] h-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
+              <Dialog.Panel className="w-[80%] max-w-[calc(var(--virtual-screen-max-width)*0.8)] h-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
                 <button
                   onClick={() => setIsOpen(false)}
                   className={`absolute top-4 right-4 text-3xl text-black hover:scale-110 transition ${markerFont.className}`}

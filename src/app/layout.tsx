@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="w-screen bg-black h-screen flex items-center">
-          <div className="max-w-[450px] h-full max-h-[700px] mx-auto w-full bg-white overflow-hidden">
+          <div className="max-w-[var(--virtual-screen-max-width)] h-full max-h-[700px] mx-auto w-full bg-white overflow-hidden">
             {children}
           </div>
         </div>
