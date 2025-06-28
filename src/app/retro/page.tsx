@@ -1,3 +1,9 @@
+import Modal from "@/components/ui/modal";
+
 export default function Retro() {
-  return <div>retro</div>;
+  return (
+    <Modal>
+      <div>retro</div>
+    </Modal>
+  );
 }
