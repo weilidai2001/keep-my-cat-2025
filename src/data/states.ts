@@ -674,15 +674,21 @@ export const tileIsMission = (tileId: number): boolean => {
   );
 };
 
-export const getMissionStatesWithImages = (): (MissionState & {
+export const getMissionStatesWithImages = (
+  visitedStates: StateKey[]
+): (MissionState & {
   heroImageUrl: string;
+  visited: boolean;
 })[] => {
   return Object.entries(states)
     .filter(
       ([key, state]: [string, MissionState]) =>
         key.startsWith("mission_") && !!state.heroImageUrl && !!state.retro
     )
-    .map(([, state]) => state as MissionState & { heroImageUrl: string });
+    .map(([key, state]) => ({
+      ...state,
+      visited: visitedStates.includes(key as StateKey),
+    }));
 };
 
 export const getPreviousStates = (

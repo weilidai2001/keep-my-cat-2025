@@ -1,5 +1,7 @@
+const KEY_NAME = "balance";
+
 export const getBalance = (): number => {
-  const stored = sessionStorage.getItem("balance");
+  const stored = sessionStorage.getItem(KEY_NAME);
   if (stored !== null) {
     try {
       return JSON.parse(stored);
@@ -13,10 +15,10 @@ export const getBalance = (): number => {
 export const incrementBalance = (amount: number): number | null => {
   const current = getBalance() ?? 0;
   const newBalance = current + amount;
-  sessionStorage.setItem("balance", JSON.stringify(newBalance));
+  sessionStorage.setItem(KEY_NAME, JSON.stringify(newBalance));
   return newBalance;
 };
 
 export const resetBalance = (): void => {
-  sessionStorage.removeItem("balance");
+  sessionStorage.removeItem(KEY_NAME);
 };
