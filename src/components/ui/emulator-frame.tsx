@@ -1,13 +1,15 @@
-"use client";
 import { IPhoneMockup } from "react-device-mockup";
-import { useMediaQuery } from "./useMediaQuery";
 
-const EmulatorFrame = ({ children }: { children: React.ReactNode }) => {
-  const isWide = useMediaQuery("(min-width: 500px)");
-  return isWide ? (
-    <IPhoneMockup screenWidth={360}>{children}</IPhoneMockup>
-  ) : (
+interface EmulatorFrameProps {
+  children: React.ReactNode;
+  isMobile?: boolean;
+}
+
+const EmulatorFrame = ({ children, isMobile }: EmulatorFrameProps) => {
+  return isMobile ? (
     <>{children}</>
+  ) : (
+    <IPhoneMockup screenWidth={360}>{children}</IPhoneMockup>
   );
 };
 
