@@ -680,7 +680,7 @@ export const getMissionStatesWithImages = (): (MissionState & {
   return Object.entries(states)
     .filter(
       ([key, state]: [string, MissionState]) =>
-        key.startsWith("mission_") && !!state.heroImageUrl
+        key.startsWith("mission_") && !!state.heroImageUrl && !!state.retro
     )
     .map(([, state]) => state as MissionState & { heroImageUrl: string });
 };
