@@ -12,6 +12,10 @@ export default function Retro() {
   const [statesWithImages, setStatesWithImages] = useState<
     ReturnType<typeof getMissionStatesWithImages>
   >([]);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [selectedStateId, setSelectedStateId] = useState<StateKey | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     const visitedStates = getJourney();
@@ -20,21 +24,28 @@ export default function Retro() {
 
   return (
     <main className="pt-[100px]">
+      <Modal isOpen={showModal} setIsOpen={setShowModal}>
+        Selected state: {selectedStateId}
+      </Modal>
       <div className="grid grid-cols-5 gap-4">
         {statesWithImages.map((state, idx) => {
           return (
-            <div
+            <button
               key={idx}
               className={`aspect-square w-full ${
-                state.visited ? "" : "opacity-20"
+                state.visited ? "cursor-pointer" : "opacity-20"
               }`}
+              onClick={() => {
+                setSelectedStateId(state.stateId);
+                setShowModal(true);
+              }}
             >
               <img
                 src={state.heroImageUrl}
                 alt=""
                 className="w-full h-full object-cover rounded-lg"
               />
-            </div>
+            </button>
           );
         })}
       </div>

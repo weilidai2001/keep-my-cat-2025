@@ -679,6 +679,7 @@ export const getMissionStatesWithImages = (
 ): (MissionState & {
   heroImageUrl: string;
   visited: boolean;
+  stateId: StateKey;
 })[] => {
   return Object.entries(states)
     .filter(
@@ -688,6 +689,7 @@ export const getMissionStatesWithImages = (
     .map(([key, state]) => ({
       ...state,
       visited: visitedStates.includes(key as StateKey),
+      stateId: key as StateKey,
     }));
 };
 

@@ -9,9 +9,15 @@ const markerFont = Permanent_Marker({
 });
 import { Dialog, Transition } from "@headlessui/react";
 
-export default function Modal({ children }: { children: React.ReactElement }) {
-  const [isOpen, setIsOpen] = useState(true);
-
+export default function Modal({
+  isOpen,
+  setIsOpen,
+  children,
+}: {
+  isOpen: boolean;
+  setIsOpen: Function;
+  children: React.ReactNode;
+}) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
