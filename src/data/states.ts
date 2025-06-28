@@ -5,7 +5,7 @@ export interface StateChoice {
 }
 
 export interface MissionState {
-  heroImageUrl?: string;
+  heroImageUrl: string;
   animation: "jackInTheBox" | "zoomIn" | "slide" | "flip";
   script?: string;
   destination?: string;

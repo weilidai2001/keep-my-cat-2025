@@ -73,7 +73,11 @@ const Dashboard = ({ stateId }: { stateId: StateKey }) => {
   return (
     <div className="w-full">
       <header className="flex justify-center items-center h-20">
-        <img src={"/dashboard_title.png"} className="w-3/5" />
+        <Image
+          src={"/dashboard_title.png"}
+          alt="dashboard title"
+          className="w-3/5"
+        />
       </header>
       <div className="flex flex-wrap w-[300px] mx-auto pb-[15px] text-2xl">
         {Array.from({ length: 100 }, (_, i) => {
