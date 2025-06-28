@@ -76,6 +76,8 @@ const Dashboard = ({ stateId }: { stateId: StateKey }) => {
         <Image
           src={"/dashboard_title.png"}
           alt="dashboard title"
+          width={692}
+          height={122}
           className="w-3/5"
         />
       </header>
@@ -107,7 +109,13 @@ const Dashboard = ({ stateId }: { stateId: StateKey }) => {
         })}
       </div>
       <div className="relative h-[150px] max-[349px]:h-[130px]">
-        <img className="h-full" src={"/dashboard_arm.jpg"} />
+        <Image
+          className="h-full"
+          src={"/dashboard_arm.jpg"}
+          alt="arm"
+          width={351}
+          height={150}
+        />
         <div
           className={`
             absolute text-[16px] tracking-[3px] top-[34%] left-[46%] w-[75px] h-[50px] flex justify-center items-center bg-white
