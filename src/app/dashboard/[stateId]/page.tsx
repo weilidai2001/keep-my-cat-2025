@@ -17,7 +17,7 @@ const renderMission = (tileId: number, stateId: StateKey) => {
     return (
       <a href={`/missions/${stateId}`}>
         <Image
-          className="rounded-full animate-flare"
+          className="rounded-full animate-flare btn-press-scale cursor-pointer"
           src={"/dashboard_mission_active.png"}
           alt="mission active"
           width={30}
