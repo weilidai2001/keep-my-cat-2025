@@ -38,7 +38,7 @@ export default function Retro() {
             <button
               key={idx}
               className={`aspect-square w-full ${
-                state.visited ? "cursor-pointer" : "opacity-20"
+                state.visited ? "cursor-pointer btn-press-scale" : "opacity-20"
               }`}
               onClick={() => {
                 if (state.visited) {

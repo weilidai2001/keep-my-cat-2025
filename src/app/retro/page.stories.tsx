@@ -3,10 +3,6 @@ import React from "react";
 import Retro from "./page";
 
 // Import manual mocks for Storybook usage
-import {
-  getJourney,
-  getMissionStatesWithImages,
-} from "./__mocks__/mocked-modules";
 import { addToJourney } from "@/api/journey-persistence";
 
 // Optionally, you can create a decorator to provide these mocks via context if needed.
@@ -19,6 +15,10 @@ const meta: Meta<typeof Retro> = {
     (Story) => {
       // Set up localStorage with mock data expected by getJourney
       addToJourney("mission_b0m1a1");
+      addToJourney("mission_b0m1a2");
+      addToJourney("mission_b4m2");
+      addToJourney("mission_b1m2");
+      addToJourney("mission_b1m2");
       return <Story />;
     },
   ],
