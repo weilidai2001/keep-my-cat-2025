@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import React, { useState } from "react";
 import Modal from "./modal";
 
@@ -18,7 +18,13 @@ export const Default: Story = {
       <div>
         <button
           onClick={() => setIsOpen(true)}
-          style={{ padding: "8px 16px", borderRadius: "4px", background: "#2d6cdf", color: "white", border: "none" }}
+          style={{
+            padding: "8px 16px",
+            borderRadius: "4px",
+            background: "#2d6cdf",
+            color: "white",
+            border: "none",
+          }}
         >
           Open Modal
         </button>
