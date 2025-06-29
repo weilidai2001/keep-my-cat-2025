@@ -140,8 +140,8 @@ const Dashboard = ({ stateId }: { stateId: StateKey }) => {
 export default function Page({
   params,
 }: {
-  params: Promise<{ stateId: string }>;
+  params: { stateId: string };
 }) {
-  const { stateId } = React.use(params);
+  const { stateId } = params;
   return <Dashboard stateId={stateId as StateKey} />;
 }
