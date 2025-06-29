@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
     <button
       type="button"
       onClick={handleClick}
-      className="block text-center cursor-pointer outline-none text-black bg-transparent border border-black rounded-[15px] uppercase px-[15px] py-[5px] text-[18px] mx-auto shadow-[2px_2px_2px_rgba(0,0,0,0.2)] hover:bg-gray-100 transition active:scale-95 active:shadow-none"
+      className="block text-center cursor-pointer outline-none text-black bg-transparent border border-black rounded-[15px] uppercase px-[15px] py-[5px] text-[18px] mx-auto shadow-[2px_2px_2px_rgba(0,0,0,0.2)] hover:bg-gray-100 transition btn-press-scale active:shadow-none"
     >
       {text}
     </button>

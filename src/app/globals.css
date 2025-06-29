@@ -160,3 +160,7 @@ body {
   color: var(--foreground);
   font-family: "Pangolin", cursive;
 }
+
+.btn-press-scale {
+  @apply transition hover:scale-110 active:scale-95;
+}

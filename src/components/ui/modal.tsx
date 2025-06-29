@@ -45,7 +45,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, setIsOpen, children }) => {
               <Dialog.Panel className="w-[80%] max-w-[330px] h-[80%] transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all relative">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="absolute top-4 right-4 text-3xl text-black hover:scale-110 active:scale-95 transition cursor-pointer"
+                  className="absolute top-4 right-4 text-3xl text-black btn-press-scale transition cursor-pointer"
                   aria-label="Close modal"
                   type="button"
                 >
